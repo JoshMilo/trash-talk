@@ -168,14 +168,6 @@ Response.prototype = (function () {
                 cardContent: cardContent,
                 shouldEndSession: false
             }));
-        },
-        begin: function (speechOutput, repromptSpeech) {
-            this._context.succeed(buildSpeechletResponse({
-                session: this._session,
-                output: speechOutput,
-                reprompt: repromptSpeech,
-                shouldEndSession: false
-            }));
         }
     };
 })();
