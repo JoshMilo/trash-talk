@@ -19,7 +19,7 @@ var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-valu
 /**
  * Array containing space facts.
  */
-var SPACE_FACTS = [
+var TRASH_TALK = [
   "I don't want to talk to you no more, you empty-headed animal food trough wiper! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries!",
   "Let's start with the obvious... 'scuse me, is that your nose or did a bus park on your face?",
   "Is it true when you were born the doctor turned around and slapped your mother?",
@@ -116,7 +116,8 @@ var SPACE_FACTS = [
   "Y'know, I've come across a lot of psychos, but none as fucking boring as you. You are a real boring fuck. Sorry, sorry, I know you disapprove of swearing so I'll sort that out. You are a boring F, star, star, CUNT!",
   "Kiss my sweaty balls, you fat fuck.",
   "If I had a dick, this is where I'd tell you to suck it!",
-  "And furthermore, you can all go fuck yourselves."
+  "And furthermore, you can all go fuck yourselves.",
+  "Suck chowder, musclehead!"
 ];
 
 /**
@@ -130,21 +131,21 @@ var AlexaSkill = require('./AlexaSkill');
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance
  */
-var SpaceGeek = function () {
+var TrashTalk = function () {
     AlexaSkill.call(this, APP_ID);
 };
 
 // Extend AlexaSkill
-SpaceGeek.prototype = Object.create(AlexaSkill.prototype);
-SpaceGeek.prototype.constructor = SpaceGeek;
+TrashTalk.prototype = Object.create(AlexaSkill.prototype);
+TrashTalk.prototype.constructor = TrashTalk;
 
-SpaceGeek.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
+TrashTalk.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
     console.log("onSessionStarted requestId: " + sessionStartedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any initialization logic goes here
 };
 
-SpaceGeek.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
+TrashTalk.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     console.log("onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
     handleNewFactRequest(response);
 };
@@ -152,13 +153,13 @@ SpaceGeek.prototype.eventHandlers.onLaunch = function (launchRequest, session, r
 /**
  * Overridden to show that a subclass can override this function to teardown session state.
  */
-SpaceGeek.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
+TrashTalk.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
     console.log("onSessionEnded requestId: " + sessionEndedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
 };
 
-SpaceGeek.prototype.intentHandlers = {
+TrashTalk.prototype.intentHandlers = {
     GetNewFactIntent: function (intent, session, response) {
         handleNewFactRequest(response);
     },
@@ -173,18 +174,18 @@ SpaceGeek.prototype.intentHandlers = {
  */
 function handleNewFactRequest(response) {
     // Get a random space fact from the space facts list
-    var factIndex = Math.floor(Math.random() * SPACE_FACTS.length);
-    var fact = SPACE_FACTS[factIndex];
+    var factIndex = Math.floor(Math.random() * TRASH_TALK.length);
+    var fact = TRASH_TALK[factIndex];
 
     // Create speech output
     var speechOutput = fact;
 
-    response.tellWithCard(speechOutput, "SpaceGeek", speechOutput);
+    response.tellWithCard(speechOutput, "TrashTalk", speechOutput);
 }
 
 // Create the handler that responds to the Alexa Request.
 exports.handler = function (event, context) {
-    // Create an instance of the SpaceGeek skill.
-    var spaceGeek = new SpaceGeek();
-    spaceGeek.execute(event, context);
+    // Create an instance of the TrashTalk skill.
+    var trashTalk = new TrashTalk();
+    trashTalk.execute(event, context);
 };
