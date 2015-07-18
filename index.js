@@ -20,9 +20,7 @@ var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-valu
  * Array containing space facts.
  */
 var SPACE_FACTS = [
-  "Of course you said that, you're retarded",
-  "You're a bitch... my bitch",
-  "That bitch be crazy"
+  "I don't want to talk to you no more, you empty-headed animal food trough wiper! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries!"
 ];
 
 /**
