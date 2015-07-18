@@ -14,7 +14,7 @@
 /**
  * App ID for the skill
  */
-var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
+var APP_ID = "amzn1.echo-sdk-ams.app.6380f2eb-55ec-4937-a6d1-c3fe8982d21b"; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
 /**
  * Array containing space facts.
@@ -49,7 +49,8 @@ var SPACE_FACTS = [
   "I know, there's a problem with your face.",
   "You're incapable of running this city. SIT your five-dollar ass down before I make change.",
   "What you've just said is one of the most insanely idiotic things I have ever heard. At no point in your rambling, incoherent response were you even close to anything that could be considered a rational thought. Everyone in this room is now dumber for having listened to it. I award you no points, and may God have mercy on your soul.",
-  "Look up 'idiot' in the dictionary. You know what you'll find? No! The definition of the word idiot, which you fucking are!"
+  "Look up 'idiot' in the dictionary. You know what you'll find? No! The definition of the word idiot, which you fucking are!",
+  "Allow me to pop a jaunty little bonnet on your purview and ram it up your ass with a lubricated horse cock!"
 ];
 
 /**
