@@ -14,7 +14,7 @@
 /**
  * App ID for the skill
  */
-var APP_ID = "amzn1.echo-sdk-ams.app.6380f2eb-55ec-4937-a6d1-c3fe8982d21b"; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
+var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
 /**
  * Array containing space facts.
@@ -26,7 +26,7 @@ var SPACE_FACTS = [
   "If my dog had a face like yours I'd shave his ass and teach him to walk backwards.",
   "I'll use small words so that you'll be sure to understand, you warthog faced buffoon.",
   "You pompous, stuck-up, snot-nosed, English, giant, twerp, scumbag, fuck face dickhead, fuck",
-  "Why, you stuck up, half-witted, scruffy-looking Nerf herder.",
+  "You stuck up, half-witted, scruffy-looking Nerf herder.",
   "You clinking, clanking, clattering collection of caligenous junk!",
   "You shit kicking... stinky... horse-manure-smellin'... motherfucker",
   "You dirt-eating piece of slime! You scum-sucking pig! You son of a motherless goat!",
@@ -41,7 +41,7 @@ var SPACE_FACTS = [
   "You're just the afterbirth, Eli. You slithered out of your mother's filth. They should have put you in a glass jar on a mantlepiece.",
   "You are a sad, strange little man, and you have my pity.",
   "Robyn wouldn't piss on your gums if your teeth were on fire.",
-  "There is a name for you, ladies, but it isn't used in high society... outside of a kennel.",
+  "There is a name for you ladies, but it isn't used in high society... outside of a kennel.",
   "You're one... ugly motherfucker",
   "Honey, you got reeeal ugly!",
   "Take this quarter, go downtown, and have a rat gnaw that thing off your face!",
@@ -79,7 +79,44 @@ var SPACE_FACTS = [
   "People who talk in metaphors oughta shampoo my crotch.",
   "Never seen so many backwards ass country fuckers in my life.",
   "You're an inanimate fucking object!",
-  "You stupid, ignorant son of a bitch, dumb bastard. Jesus Christ. I've met some dumb bastards in my time but you outdo them all."
+  "You stupid, ignorant son of a bitch, dumb bastard. Jesus Christ. I've met some dumb bastards in my time but you outdo them all.",
+  "Where did you learn your trade, you stupid fucking cunt, you idiot? Who ever told you that you could work with men? Oh, I'm gonna have your job, shithead.",
+  "Oh, right! To call you stupid would be an insult to stupid people!",
+  "Hey, Tommy, if I was gonna break your balls, I'd tell you to go home and get your shine box. ...Now go home and get your fucking shine box.",
+  "I want to tell you what a cheap, lying, no-good, rotten, four-flushing, low-life, snake-licking, dirt-eating, inbred, overstuffed, ignorant, blood-sucking, dog-kissing, brainless, dickless, hopeless, heartless, fat-ass, bug-eyed, stiff-legged, spotty-lipped, worm-headed sack of monkey shit you are!",
+  "The day I need a friend like you, I'll just have myself a little squat and shit one out.",
+  "I'll rip out your eyes and piss on your brain.",
+  "I'll shove that bat up your ass and turn you into a popsicle.",
+  "Listen you snot-nose little fuck I was takin' shrapnel in Khe Sanh when you were crappin' in your hands and rubbin' it on your face.",
+  "Here's the thing. I don't give a tuppenny fuck about your moral conundrum, you meat-headed shit-sack.",
+  "Are you gonna bark all day little doggie? Or are you gonna bite?",
+  "That's what I thought. You're a gutless turd.",
+  "You look like the vermin-ridden son of a bitch you are.",
+  "I bet you're the kind of guy that would fuck a person in the ass and not even have the goddamn common courtesy to give him a reach-around."
+  "Holy hell, son, you're about as useful as a cock-flavored lollipop!",
+  "Did you just call me a fuck-ass? You can go suck a fuck.",
+  "Hey, Frank, you're a piece of shit. You know what I'm taking about about, you fucking cockroach.",
+  "You want to know who's son you are? ...You're the son of a thousand fathers, all bastards like you.",
+  "You are a smelly pirate hooker.",
+  "You look like a blueberry.",
+  "Why don't you go back to your home on Whore Island?",
+  "First, take a big step back... and literally, FUCK YOUR OWN FACE!",
+  "You're the problem! You're the fucking problem you fucking Dr White honkin' jam-rag fucking spunk-bubble! I'm telling you Bitch you keep looking at me I'll put you in the fucking ground, promise you!",
+  "Shut up, cunt. You louse. You got some fuckin' neck ain't you. Retired? Fuck off, you're revolting. Look at your suntan, it's leather, it's like leather man, your skin. We could make a fucking suitcase out of you. Like a crocodile, fat crocodile, fat bastard. You look like fucking Idi Amin, you know what I mean? Stay here? You should be ashamed of yourself. Who do you think you are? King of the castle? Cock of the walk?",
+  "Kiss my sweaty balls, you fat fuck.",
+  "Shut up, you Teutonic twat!",
+  "Shut that cunt's mouth or I'll come over there and fuckstart her head!",
+  "You cock-juggling thundercunt!",
+  "Hey, try not to suck any dick on the way through the parking lot!",
+  "Stick your cock up her ass, you motherfucking worthless cocksucker.",
+  "Shit-eating son-of-a-bitch! Bastard, douche-bag, twat, numb-nuts, dickhead, BITCH!",
+  "Boy, I wouldn't give a squirt of piss for your ass right now.",
+  "For me, you're somewhere between a cockroach and that white stuff that accumulates at the corner of your mouth when you're really thirsty.",
+  "You're part eggplant. Ohhh! Huh? Hey! Hey! Hey! You're a cantaloupe.",
+  "Y'know, I've come across a lot of psychos, but none as fucking boring as you. You are a real boring fuck. Sorry, sorry, I know you disapprove of swearing so I'll sort that out. You are a boring F, star, star, CUNT!",
+  "Kiss my sweaty balls, you fat fuck.",
+  "If I had a dick, this is where I'd tell you to suck it!",
+  "And furthermore, you can all go fuck yourselves."
 ];
 
 /**
@@ -140,7 +177,7 @@ function handleNewFactRequest(response) {
     var fact = SPACE_FACTS[factIndex];
 
     // Create speech output
-    var speechOutput = "Hey " + fact;
+    var speechOutput = fact;
 
     response.tellWithCard(speechOutput, "SpaceGeek", speechOutput);
 }
