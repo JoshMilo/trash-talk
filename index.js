@@ -68,10 +68,10 @@ var SPACE_FACTS = [
   "I used to fuck guys like you in prison.",
   "I call that bold talk for a one-eyed fat man.",
   "Fill your hands, you son of a bitch!",
-  "Hey, laser lips, your mama was a snow blower."
+  "Hey, laser lips, your mama was a snow blower.",
   "I can hear you breathing you fuck. You listening? Your mother sucks fucking big fucking elephant dicks... you got that?",
   "Fuck your father in the shower and then have a snack? Are you going to charge me dickhead?",
-  "Fuck face? I like that one Errol. I'll have to remember that one next time I'm climbing off yer mum."
+  "Fuck face? I like that one Errol. I'll have to remember that one next time I'm climbing off yer mum.",
   "Oh, this your wife, huh? A lovely lady. Hey baby, you must've been something before electricity.",
   "You're so fat I had to roll you in flour and look for the wet spot. Motherfucker, if you wanna fuck you you gotta slap your thigh and ride the wave in.",
   "The power grid was shut off by dickless here. Yes, it's true. This man has no dick.",
@@ -92,7 +92,7 @@ var SPACE_FACTS = [
   "Are you gonna bark all day little doggie? Or are you gonna bite?",
   "That's what I thought. You're a gutless turd.",
   "You look like the vermin-ridden son of a bitch you are.",
-  "I bet you're the kind of guy that would fuck a person in the ass and not even have the goddamn common courtesy to give him a reach-around."
+  "I bet you're the kind of guy that would fuck a person in the ass and not even have the goddamn common courtesy to give him a reach-around.",
   "Holy hell, son, you're about as useful as a cock-flavored lollipop!",
   "Did you just call me a fuck-ass? You can go suck a fuck.",
   "Hey, Frank, you're a piece of shit. You know what I'm taking about about, you fucking cockroach.",
