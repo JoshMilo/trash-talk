@@ -14,10 +14,10 @@
 /**
  * App ID for the skill
  */
-var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
+var APP_ID = "amzn1.echo-sdk-ams.app.1d532c82-1510-40a6-870f-61285365b7e6"; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
 /**
- * Array containing space facts.
+ * Array containing trash talk.
  */
 var TRASH_TALK = [
   "I don't want to talk to you no more, you empty-headed animal food trough wiper! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries!",
