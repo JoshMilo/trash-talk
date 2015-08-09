@@ -14,7 +14,7 @@
 /**
  * App ID for the skill
  */
-var APP_ID = "amzn1.echo-sdk-ams.app.1d532c82-1510-40a6-870f-61285365b7e6";
+var APP_ID = undefined;
 
 /**
  * Array containing trash talk.
