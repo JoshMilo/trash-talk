@@ -5,11 +5,6 @@
  * This simple sample has no external dependencies or session management, and shows the most basic
  * example of how to create a Lambda function for handling Alexa Skill requests.
  *
- * Examples:
- * One-shot model:
- *  User: "Alexa, ask Space Geek for a space fact"
- *  Alexa: "Here's your space fact: ..."
- */
 
 /**
  * App ID for the skill
@@ -123,12 +118,6 @@ var TRASH_TALK = [
  */
 var AlexaSkill = require('./AlexaSkill');
 
-/**
- * SpaceGeek is a child of AlexaSkill.
- * To read more about inheritance in JavaScript, see the link below.
- *
- * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance
- */
 var TrashTalk = function () {
     AlexaSkill.call(this, APP_ID);
 };
@@ -140,7 +129,6 @@ TrashTalk.prototype.constructor = TrashTalk;
 TrashTalk.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
     console.log("onSessionStarted requestId: " + sessionStartedRequest.requestId
         + ", sessionId: " + session.sessionId);
-    // any initialization logic goes here
 };
 
 TrashTalk.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
@@ -154,7 +142,6 @@ TrashTalk.prototype.eventHandlers.onLaunch = function (launchRequest, session, r
 TrashTalk.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
     console.log("onSessionEnded requestId: " + sessionEndedRequest.requestId
         + ", sessionId: " + session.sessionId);
-    // any cleanup logic goes here
 };
 
 TrashTalk.prototype.intentHandlers = {
@@ -168,10 +155,10 @@ TrashTalk.prototype.intentHandlers = {
 };
 
 /**
- * Gets a random new fact from the list and returns to the user.
+ * Gets a random insult from the list and returns to the user.
  */
 function handleNewFactRequest(response) {
-    // Get a random space fact from the space facts list
+    // Get a random insult
     var factIndex = Math.floor(Math.random() * TRASH_TALK.length);
     var fact = TRASH_TALK[factIndex];
 
